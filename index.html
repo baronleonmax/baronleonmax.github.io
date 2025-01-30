@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>レントゲン画像アップロード</title>
+</head>
+<body>
+    <h1>レントゲン画像アップロード</h1>
+    <form id="upload-form">
+        <input type="file" id="image-upload" accept="image/*" required>
+        <button type="submit">画像をアップロード</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('upload-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const file = document.getElementById('image-upload').files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = new Image();
+                    img.src = e.target.result;
+                    document.getElementById('result').appendChild(img);
+                    // ここで画像解析のコードを追加します
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>
