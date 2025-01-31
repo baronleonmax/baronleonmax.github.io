@@ -23,18 +23,4 @@
                     const img = new Image();
                     img.src = e.target.result;
                     document.getElementById('result').appendChild(img);
-                    // ここで画像解析のコードを追加します
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-    </script>
-</body>
-</html>
-
-<h2>レントゲン画像アップロード</h2>
-<form id="upload-form">
-    <input type="file" id="image-upload" accept="image/*" required>
-    <button type="submit">画像をアップロード</button>
-</form>
-<div id="result"></div>
+      
