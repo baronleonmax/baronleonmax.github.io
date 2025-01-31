@@ -7,13 +7,18 @@
 </head>
 <body>
     <h1>レントゲン画像アップロード</h1>
+    
+    <!-- 画像アップロードフォーム (1回だけ表示) -->
     <form id="upload-form">
         <input type="file" id="image-upload" accept="image/*" required>
         <button type="submit">画像をアップロード</button>
     </form>
+    
+    <!-- 結果表示部分 -->
     <div id="result"></div>
 
     <script>
+        // フォームの送信処理
         document.getElementById('upload-form').addEventListener('submit', function(event) {
             event.preventDefault();
             const file = document.getElementById('image-upload').files[0];
@@ -23,7 +28,7 @@
                     const img = new Image();
                     img.src = e.target.result;
                     document.getElementById('result').appendChild(img);
-                    // ここで画像解析のコードを追加します
+                    // 画像解析のコードをここに追加
                 };
                 reader.readAsDataURL(file);
             }
