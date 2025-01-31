@@ -23,4 +23,11 @@
                     const img = new Image();
                     img.src = e.target.result;
                     document.getElementById('result').appendChild(img);
-      
+                    // ここで画像解析のコードを追加します
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>
